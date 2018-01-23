@@ -33,20 +33,22 @@ int main()
     
     char input;
 
-    //int age;
+    int age;
     printf("Do you like to code?:\n");
     scanf("%c", &input);
     printf("1) You entered [%c]\n", input);
     
-    /*printf("Enter your age:\n");
-    scanf("%d", &age);
-    printf("Your age is [%d]\n", age); */
-
     printf("Do you really like to code?:\n");
+    //Use an empty space before %c in the scanf
+    //This will take care of whitespace characters (such as enter)
     scanf(" %c", &input);
     printf("2) You entered [%c]\n", input);
     printf("3) You entered [%c]\n", input);
     
+    printf("Enter your age:\n");
+    scanf("%d", &age);
+    printf("Your age is [%d]\n", age); 
+
     return 0;
 }
 // Function Definitions
