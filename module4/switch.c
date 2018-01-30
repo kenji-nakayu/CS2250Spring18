@@ -45,7 +45,6 @@ int main()
 
     default:
         printf("You placed %d. You don't get a medal.\n", pos);
-        break;
     }
 
     return 0;
