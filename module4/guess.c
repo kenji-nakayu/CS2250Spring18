@@ -3,7 +3,7 @@
  *
  *       Filename:  guess.c
  *
- *    Description:  Create a simple guessing game with three tries
+ *    Description:  Create a simple guessing game with three tries using nested if statements.
  *
  *        Version:  1.0
  *        Created:  01/30/2018 08:48:03 AM
