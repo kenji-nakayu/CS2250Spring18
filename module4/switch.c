@@ -42,6 +42,11 @@ int main()
     case 3:
         printf("You placed %d. You get the bronze medal!\n", pos);
         break;
+    case 14:
+    case 28:
+    case 37:
+        printf("You placed %d. You get the plastic medal!\n", pos);
+        break;
 
     default:
         printf("You placed %d. You don't get a medal.\n", pos);
