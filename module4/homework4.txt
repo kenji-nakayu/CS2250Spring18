@@ -6,4 +6,6 @@ address icarus.cs.weber.edu
 username
 password
 
-
+Also, just something to put down for potential reference,
+the C reference found at cppreference.com is a good resource,
+maintained by the group that maintains C and C++.
