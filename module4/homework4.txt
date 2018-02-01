@@ -1,0 +1,9 @@
+The file for homework 4 can be downloaded with FileZilla or WinSCP.
+
+In the event that the program asks for the "Port",
+   set port = 22 (port: 22)
+address icarus.cs.weber.edu
+username
+password
+
+
