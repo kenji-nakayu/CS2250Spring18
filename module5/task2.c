@@ -25,7 +25,7 @@
 int main()
 {
     int num;
-    printf("Enter a positive number >= 0: \n");
+    /*printf("Enter a positive number >= 0: \n");
     scanf("%d", &num);
 
     while(1)
@@ -36,7 +36,16 @@ int main()
         {   printf("Enter a positive number >= 0: \n");
     scanf("%d", &num);
         }
+    } */
+
+    //Logic is simpler with a non-infinite while loop.
+    
+    while(num < 0)
+    {
+        printf("Enter a positive number >= 0: \n");
+        scanf("%d", &num);
     }
+
 
     printf("Thank you for following the instructions.\n");
 
