@@ -1,0 +1,11 @@
+To search through the terminal, the grep function is useful.
+
+grep "String to search for" directory/file
+
+for example, to search for use of the random function "rand",
+
+grep "rand" module*/*.c
+
+The * acts as a wildcard, so the above command would search for
+"rand" in any directory starting with "module" and
+any file that ends with ".c"

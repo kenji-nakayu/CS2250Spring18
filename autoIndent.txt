@@ -1,0 +1,3 @@
+Remember, to auto-indent in a VIM c file, sit on a
+{ curly brace } and then input =%
+This will auto-indent your file.
