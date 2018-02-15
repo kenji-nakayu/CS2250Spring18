@@ -3,8 +3,8 @@
  *
  *       Filename:  guessNum.c
  *
- *    Description:  Guessing game
- *
+ *    Description:  Guessing game with a loop to prompt user to keep playing.
+ *                  Use a do while loop instead of a regular while loop.
  *        Version:  1.0
  *        Created:  02/13/2018 09:28:53 AM
  *       Revision:  none
@@ -21,6 +21,8 @@
 // Constants
 const int LEN = 5; //Number of guesses
 const int NUM = 20; //
+
+//Optional FIXME: Add an option for different difficulty levels.
 
 // Main Function
 int main()
@@ -40,17 +42,22 @@ int main()
     int input[LEN]; //The array for capturing input
     int stop; //Placeholder for the i value to stop printing at.
     int winner; //using an integer to store the win condition
-    //int again; //integer to check for already entered input.
-
-    srand((int)time(0));
-    ans = rand() % (NUM + 1); // Sets the random number to be between
-        // 0 and NUM, inclusive
+    int again; //integer to check for already entered input.
+    char keepPlaying; // = 'y'; initialization is not required for a do-while loop.
     
     //fixed: Add game instructions for the user
     printf("Welcome to the guessing game!\n");
     printf("You goal is to guess a random number between 0 and %d.\n", NUM);
     printf("You will have %d guesses.\n", LEN);
 
+    srand((int)time(0));
+
+
+    do
+    {
+
+    ans = rand() % (NUM + 1); // Sets the random number to be between
+        // 0 and NUM, inclusive
 
     stop = -1;
     winner = 0;
@@ -68,8 +75,33 @@ int main()
             continue;
         }
 
-        //FIXME: Check for guesses already entered
+        //fixed: Check for guesses already entered
+        again = 0;
 
+        for(int j = 0; j < i; ++j)
+        {
+            if(input[j] == input[i])
+            { again = 1;}
+        }
+
+        if(again)
+        {
+            printf("You have already guessed ");
+
+            for(int j = 0; j < i; ++j)
+            {
+                if(j == i - 1)
+                {printf("and ");}
+                printf("[%d] ", input[j]);
+                if(j == i - 1)
+                {break;}
+            }
+            printf("\n");
+            printf("Please guess a different number\n");
+
+            --i;
+            continue;
+        }
         if(input[i] > ans) // Guess is too high
         {
             printf("Too high. Guess lower.\n");
@@ -92,7 +124,7 @@ int main()
 
     if(stop == -1)
     {
-        stop = LEN;
+        stop = LEN - 1;
     }
 
     if(winner != 0)
@@ -114,6 +146,28 @@ int main()
     }
     printf("\n");
     printf("The answer was [%d]\n", ans);
+
+    //New task; when complete, ask if player wants to play again.
+    // 'y' for yes; 'n' for no.
+    // if YES, play again.
+    // If no, quit.
+
+    printf("Would you like to play again? (y/n)\n");
+    scanf(" %c", &keepPlaying);
+
+    while((keepPlaying != 'y') && (keepPlaying != 'n'))
+    {
+        printf("Sorry, but you entered an invalid input.\n");
+        printf("Please enter lowercase \"y\" or \"n\".\n");
+        printf("Would you like to play again? (y/n)\n");
+        scanf("%c", &keepPlaying);
+    }
+
+
+
+
+    } while(keepPlaying == 'y')
+    //As a note, sitting on one curly and entering "\%" will take you to the corresponding curly brace.
 
     printf("Thank you for playing!\n");
 
