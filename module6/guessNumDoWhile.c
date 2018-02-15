@@ -166,7 +166,7 @@ int main()
 
 
 
-    } while(keepPlaying == 'y')
+    } while(keepPlaying == 'y');
     //As a note, sitting on one curly and entering "\%" will take you to the corresponding curly brace.
 
     printf("Thank you for playing!\n");
