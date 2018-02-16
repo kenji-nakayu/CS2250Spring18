@@ -29,6 +29,8 @@ int main()
     int rating[PLAYERS];
     //char for following the menu options
     char option;
+    //Temporary variable for using in menu options
+    int temp, num;
     //1.0) Capture initial values
     for(int i = 1; i <= PLAYERS; ++i)
     {
@@ -48,7 +50,7 @@ int main()
     //2.0) Display the menu.
     do
     {
-        printf("\nMenu\n");
+        printf("\nMENU\n");
         printf("u - Update player rating\n");
         printf("a - Output players above a rating\n");
         printf("r - Replace player\n");
@@ -57,21 +59,70 @@ int main()
         printf("\nChoose an option:\n");
         scanf(" %c", & option);
 
-    //FIXME: Implement actual menu functions. For now, just display appropriate input.
     //4.0) Implement the "Update player rating menu option"
     if(option == 'u')
     {
-        printf("You entered 'u'\n");
+        printf("Enter a jersey number:\n");
+        scanf("%d", &temp);
+
+        num = -1;
+
+        for(int i = 0; i < PLAYERS; ++i)
+        {
+            if(temp == jersey[i])
+            { num = i;}
+        }
+
+        if(num == -1)
+        {
+            printf("Invalid jersey number\n\n");
+            continue;
+        }
+        printf("Enter a new rating for player:\n");
+        scanf("%d", &rating[num]);
+
     }
     //5.0) Implement the "Output players above a rating" menu option
     else if(option == 'a')
     {
-        printf("You entered 'a'\n");
+        printf("Enter a rating:\n");
+        scanf("%d", &temp);
+
+        printf("\nABOVE %d\n", temp);
+        for(int i = 1; i <= PLAYERS; ++i)
+        {
+            if(rating[i-1] > temp)
+            {
+            printf("Player %d -- Jersey number: %d, Rating: %d\n", i, jersey[i-1], rating[i-1]);
+            }
+        }
     }
     //6.0) Implement the "Replace player" menu option
     else if(option == 'r')
     {
-        printf("You entered 'r'\n");
+        printf("Enter a jersey number:\n");
+        scanf("%d", &temp);
+
+        num = -1;
+
+        for(int i = 0; i < PLAYERS; ++i)
+        {
+            if(jersey[i] == temp)
+            {
+                num = i;
+            }
+        }
+
+        if(num == -1)
+        {
+            printf("Jersey number not in roster.\n");
+            continue;
+        }
+
+        printf("Enter a new jersey number:\n");
+        scanf("%d", &jersey[num]);
+        printf("Enter a rating for the new player:\n");
+        scanf("%d", &rating[num]);
     }
     //3.0) Implement the "Output roster" menu option
     else if(option == 'o')
