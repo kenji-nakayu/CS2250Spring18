@@ -1,0 +1,17 @@
+A vim session can be split by entering the command
+:sp on the command line.
+Alternatively, the screen can be given a vertical split with the
+:vsp command.
+
+To open a new file in the same vim session,
+   the :tabnew command can be used.
+
+   For example,
+vim file1.c
+:newtab file2.c
+
+gt swaps between the open tabs (//greater tab)
+
+using a after certain commands will execute for all tabs
+:wa saves all open tabs
+:qa closes all open tabs
