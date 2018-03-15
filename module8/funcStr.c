@@ -17,23 +17,29 @@
  */
 #include <stdio.h>
 #include <string.h>
-//Constants
-const int INPUT_STR_SIZE = 50; //Input string size
+#include <ctype.h>
+
+#include "superlib.h"
+
 // Main Function
 int main()
 {
     char userStr[INPUT_STR_SIZE]; //Input string from user
-    char userChar = '\t';
+    char userChar = '-';
 
     //Prompt user for input
-    printf("Enter a string with spaces:\n ");
-    fgets(modString, INPUT_STR_SIZE, stdin);
+    printf("Enter a string with spaces:\n");
+    fgets(userStr, INPUT_STR_SIZE, stdin);
 
     //Call function to modify user defined string
     StrSpaceToChar(userStr, userChar);
 
+    RemoveNewLine(userStr);
+
     printf("String with hyphens: %s\n", userStr);
 
+    printf("The string has %d digits\n",
+            StrCountDigits(userStr));
     return 0;
 }
 

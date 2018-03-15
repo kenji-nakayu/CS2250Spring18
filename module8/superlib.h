@@ -18,9 +18,16 @@
 #ifndef __SUPERLIB_H__
 #define __SUPERLIB_H__
 // Constants
-//const int INPUT_STR_SIZE = 50; //Input string size
+//Inside header files, add the keyword static
+//before the variable definition
+static const int INPUT_STR_SIZE = 50; //Input string size
 
 // Function Prototypes
 void StrSpaceToChar(char modString[], char sep);
+
+//Task1: Make a function to count digits in the user string
+int StrCountDigits(char userString[]);
+
+void RemoveNewLine(char userString[]);
 
 #endif
