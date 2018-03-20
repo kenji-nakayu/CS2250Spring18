@@ -20,7 +20,7 @@
 //and use * to highlight all occurrences of that word
 //Using n on the command line will move to the next occurrence.
 //Useful for searching to make sure variables are consistent.
-//Use CTRL + N to deselect the search.
+//Use CTRL + n to deselect the search.
 //
 //Also, using . in command line inserts a newline at the cursor point
 

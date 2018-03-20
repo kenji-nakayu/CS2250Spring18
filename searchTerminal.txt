@@ -9,3 +9,12 @@ grep "rand" module*/*.c
 The * acts as a wildcard, so the above command would search for
 "rand" in any directory starting with "module" and
 any file that ends with ".c"
+
+
+In the command line, you can sit on a word
+and use * to highlight all occurrences of that word
+Using n on the command line will move to the next occurrence.
+Useful for searching to make sure variables are consistent.
+Use CTRL + n to deselect the search.
+
+Also, using . in command line inserts a newline at the cursor point
