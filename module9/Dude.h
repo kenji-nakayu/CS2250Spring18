@@ -35,6 +35,10 @@ typedef struct SuperDude
 
 // Function Prototypes
 void ShowInfo(int age, double weight);
-void ShowInfoStruct(SuperDude sd);
+void ShowInfoStruct(const SuperDude* sd); //Setting constant address
+//Prevents the value from being updated but makes it where
+//you do not need to make a local temporary copy
+void InitRandDude(SuperDude* sd); //Address of type SuperDude
+SuperDude CopyInfoStruct(const SuperDude* sd);
 
 #endif /* ----- #ifndef DUDE__INC__ ----- */
