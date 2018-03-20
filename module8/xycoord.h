@@ -11,7 +11,7 @@
  *       Revision:  none
  *       Compiler:  gcc
  *
- *         Author:  Kenji Nakaju (), kenjinakaju@mail.weber.edu
+ *         Author:  Kenji Nakayu (), kenjinakayu@mail.weber.edu
  *   Organization:  WSU
  *
  * =====================================================================================

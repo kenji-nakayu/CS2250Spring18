@@ -29,10 +29,10 @@ int main()
     ShowPoint(x, y);
     InitPoint(&x, &y);
     ShowPoint(x, y);
-    MovePoint(3, 5, &x, &y);
-    ShowPoint(x, y);
-    UpdatePoint(&x, &y);
-    ShowPoint(x, y);
+    //MovePoint(3, 5, &x, &y);
+    //ShowPoint(x, y);
+    //UpdatePoint(&x, &y);
+    //ShowPoint(x, y);
 
     return 0;
 }
