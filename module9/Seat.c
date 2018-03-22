@@ -43,7 +43,10 @@ void SeatPrint(Seat seat) {
 
     return;
 }
+
+void SeatDeleteReservation(Seat seat){
 // FIXME: Add option to delete reservations
+}
 /*** End functions for Seat ***/
 
 /*** Functions for array of Seat ***/

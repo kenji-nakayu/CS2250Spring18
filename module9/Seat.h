@@ -31,6 +31,7 @@ typedef struct Seat_struct {
 void SeatMakeEmpty(Seat* seat);
 bool SeatIsEmpty(Seat seat);
 void SeatPrint(Seat seat);
+void SeatDeleteReservation(Seat seat);
 void SeatsMakeEmpty(Seat seats[], int numSeats);
 void SeatsPrint(Seat seats[], int numSeats);
 

@@ -28,7 +28,7 @@ int main(void) {
     SeatsMakeEmpty(allSeats, NUM_SEATS);
 
     while (userKey != 'q') {
-        printf("Enter command (p/r/q): ");
+        printf("Enter command (p/r/d/q): ");
         scanf(" %c", &userKey);
 
         if (userKey == 'p') { // Print seats
@@ -55,7 +55,11 @@ int main(void) {
                 printf("Completed.\n\n");
             }
         }
-        // FIXME: Add option to delete reservations
+        else if (userKey == 'd') { // Delete reservation
+            printf("Enter seat num: ");
+            scanf("%d", &seatNum);
+
+        }
         else if (userKey == 'q') { // Quit
             printf("Quitting.\n");
         }
