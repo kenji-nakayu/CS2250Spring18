@@ -18,28 +18,19 @@
  * =====================================================================================
  */
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 #include "Dude.h"
-
-// Constants
-const int NUM_PEOPLE = 5;
-// Function Prototypes
 
 // Main Function
 int main()
 {
-    srand((int)time(0)); //Setting the seed inside a function
- 
+
     SuperDude people[NUM_PEOPLE];
+    //Const NUM_PEOPLE is defined in the header file.
 
-    for(int i = 0; i < NUM_PEOPLE; ++i)
-    {
-        InitRandDude(&people[i]);
-        printf("Person %d:\n", i + 1);
-        ShowInfoStruct(&people[i]);
-    }
+    InitRandAll(people);
+    ShowInfoAll(people);
 
+    printf("\n");
     SuperDude clone3;
 
     clone3 = CopyInfoStruct(&people[2]);

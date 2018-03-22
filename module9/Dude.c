@@ -17,11 +17,12 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include "Dude.h"
 
 
 // Function Definitions
-//Resets the seed every time that the function is called
+
 
 /* 
  * ===  FUNCTION  ======================================================================
@@ -82,6 +83,23 @@ void InitRandDude(SuperDude* sd)
 
 /* 
  * ===  FUNCTION  ======================================================================
+ *         Name:  InitAllRand
+ *  Description:  Intializes an Array of Superdudes
+ * =====================================================================================
+ */
+void InitRandAll(SuperDude sdarr[])
+{
+    srand((int)time(0)); //Setting the seed
+
+    for(int i = 0; i < NUM_PEOPLE; ++i)
+    {
+        InitRandDude(&sdarr[i]);
+    }
+    
+    return;
+}
+/* 
+ * ===  FUNCTION  ======================================================================
  *         Name:  CopyInfoStruct
  *  Description:  Return the values stored in the structure parameter
  * =====================================================================================
@@ -90,3 +108,38 @@ SuperDude CopyInfoStruct(const SuperDude* sd)
 {
     return *sd;
 }
+
+/*
+ * ===  FUNCTION  ======================================================================
+ *         Name:  UpdateInfoStruct
+ *  Description:  Update values (int, doubles) from struct by some weight
+ * =====================================================================================
+ */
+void UpdateInfoStruct(SuperDude* sd, int myWeight)
+{
+    sd->age *= myWeight;
+    (*sd).weight = (*sd).weight * myWeight;
+    //Although syntax is different notation, the two statements
+    //perform equivalent operations.
+
+    return;
+}
+
+
+void ShowInfoAll(const SuperDude sdarr[])
+{
+    for(int i = 0; i < NUM_PEOPLE; ++i)
+    {
+    printf("Person %d:\n", i + 1);
+    ShowInfoStruct(&sdarr[i]);
+    printf("\n");
+    }
+
+    //Alternatively, the array members can be accessed by using
+    //index and dot operators. For example,
+    //printf("[i] Member info [%d] [%.2lf] [%c]\n",
+    // i, sdarr[i].age, sdarr[i].weight, sdarr[i].sex);
+
+    return;
+}
+

@@ -19,6 +19,9 @@
 #define  DUDE_INC__
 
 // Constants
+// #define ASIZE 3
+static const int NUM_PEOPLE = 5;
+//
 struct Dude
 {
     int age;
@@ -39,6 +42,9 @@ void ShowInfoStruct(const SuperDude* sd); //Setting constant address
 //Prevents the value from being updated but makes it where
 //you do not need to make a local temporary copy
 void InitRandDude(SuperDude* sd); //Address of type SuperDude
+void InitRandAll(SuperDude sdarr[]);
 SuperDude CopyInfoStruct(const SuperDude* sd);
+void UpdateInfoStruct(SuperDude* sd, int myWeight);
+void ShowInfoAll(const SuperDude sdarr[]);
 
 #endif /* ----- #ifndef DUDE__INC__ ----- */
