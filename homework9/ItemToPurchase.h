@@ -3,7 +3,7 @@
  *
  *       Filename:  ItemToPurchasewu.h
  *
- *    Description:  Warm up header file
+ *    Description:  Homework 9 header file
  *
  *        Version:  1.0
  *        Created:  03/27/2018 08:52:36 AM
@@ -21,6 +21,7 @@
 // Constants
 typedef struct ItemToPurchase_struct{
     char itemName[50];
+    char itemDescription[50];
     int itemPrice;
     int itemQuantity;
 }ItemToPurchase;
@@ -28,6 +29,7 @@ typedef struct ItemToPurchase_struct{
 // Function Prototypes
 void MakeItemBlank(ItemToPurchase* item);
 void PrintItemCost(ItemToPurchase item);
+void PrintItemDescription(ItemToPurchase item);
 
 #endif /* ----- #ifndef ITEMTOPURCHASEWU__INC__ ----- */
 
