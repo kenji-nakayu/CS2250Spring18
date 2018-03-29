@@ -15,3 +15,9 @@ gg
 ma
 G
 =`a
+
+Alternatively, you can sit at the start of the file and then enter
+=G to auto indent everything in the file.
+
+gg
+=G
