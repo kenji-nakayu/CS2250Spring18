@@ -31,8 +31,10 @@ void MakeItemBlank(ItemToPurchase* item)
 }
 void PrintItemCost(ItemToPurchase item)
 {
-    printf("%s %d @ $%d = $%d\n", item.itemName, item.itemPrice,
-            item.itemQuantity, item.itemPrice * item.itemQuantity);
+    int temp = item.itemPrice * item.itemQuantity;
+
+    printf("%s %d @ $%d = $%d\n", item.itemName, item.itemQuantity,
+            item.itemPrice, temp);
 
     return;
 }

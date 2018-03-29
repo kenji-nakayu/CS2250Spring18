@@ -28,15 +28,16 @@ int main()
     {
         printf("Item %d\n", i + 1);
         printf("Enter the item name:\n");
-        fgets(items[i].itemName, 50, stdin);
+        fgets(items[i].itemName, sizeof(items[i].itemName), stdin);
         items[i].itemName[strlen(items[i].itemName) - 1] = '\0';
-        fflush(stdin);
+        //fflush(stdin);
         printf("Enter the item price:\n");
         scanf("%d", &items[i].itemPrice);
         printf("Enter the item quantity:\n");
         scanf("%d", &items[i].itemQuantity);
-        fflush(stdin);
+        //fflush(stdin);
         printf("\n");
+        getchar();
     }
 
     printf("TOTAL COST\n");

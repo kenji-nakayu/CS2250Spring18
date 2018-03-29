@@ -1,3 +1,17 @@
 Remember, to auto-indent in a VIM c file, sit on a
 { curly brace } and then input =%
 This will auto-indent your file.
+
+Alternatively, to auto-indent an entire manual block (not just curly blocks)
+sit at the starting point (or hit gg on command line to go back to the
+        start of the file)
+then enter ma to leave a mark "a"
+then got to the end of manual block (or SHIFT+G to go to end of file)
+    and then enter =`a
+    (` is the lowercase ~, next to 1);
+
+To rearrange the entire file, sit on command line and then
+gg
+ma
+G
+=`a

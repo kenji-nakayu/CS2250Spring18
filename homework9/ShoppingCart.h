@@ -17,6 +17,7 @@
  */
 #ifndef  SHOPPINGCART__INC__
 #define  SHOPPINGCART_INC__
+#include "ItemToPurchase.h"
 
 // Constants
 typedef struct ShoppingCart_struct{
@@ -30,6 +31,11 @@ typedef struct ShoppingCart_struct{
 ShoppingCart AddItem(ItemToPurchase item, ShoppingCart cart);
 ShoppingCart RemoveItem(char name[], ShoppingCart cart);
 ShoppingCart ModifyItem(ItemToPurchase item, ShoppingCart cart);
+int GetNumCart(ShoppingCart cart);
+int GetNumItemsInCart(ShoppingCart cart);
+int GetCostOfCart(ShoppingCart cart);
+void PrintTotal(ShoppingCart cart);
+void PrintDescriptions(ShoppingCart cart);
+ShoppingCart PrintMenu(ShoppingCart cart);
 
 #endif /* ----- #ifndef SHOPPINGCART__INC__ ----- */
-

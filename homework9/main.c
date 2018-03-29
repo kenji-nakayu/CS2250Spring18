@@ -17,11 +17,29 @@
  */
 #include <stdio.h>
 #include "ShoppingCart.h"
+#include <string.h>
 
 
 // Main Function
-int main()
+int main(void)
 {
+    ShoppingCart userCart;
+    for(int i = 0; i < 10; ++i)
+    {
+        MakeItemBlank(&userCart.cartItems[i]);
+    }
+
+    printf("Enter Customer's Name:\n");
+    fgets(userCart.customerName, 50, stdin);
+    userCart.customerName[strlen(userCart.customerName) - 1] = '\0';
+    printf("Enter Today's Date:\n");
+    fgets(userCart.currentDate, 50, stdin);
+    userCart.currentDate[strlen(userCart.currentDate) - 1] = '\0';
+
+    printf("\nCustomer Name: %s\n", userCart.customerName);
+    printf("Today's Date: %s\n", userCart.currentDate);
+
+    userCart = PrintMenu(userCart);
 
     return 0;
 }
