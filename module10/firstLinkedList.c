@@ -65,6 +65,12 @@ int main(void)
         currObj = IntNode_GetNext(currObj);
     }
 
+    //Clean your mess
+    free(headObj);
+    free(nodeObj1);
+    free(nodeObj2);
+    free(nodeObj3);
+
     return 0;
 }
 // Function Definitions
