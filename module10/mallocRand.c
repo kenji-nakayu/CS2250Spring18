@@ -27,7 +27,7 @@ int main()
 {
     char c = '\0';
     int num = 0;
-    const int mbInt = 1024 * 1024 / (int)sizeof(int);
+    //const int mbInt = 1024 * 1024 / (int)sizeof(int);
     int* array = NULL;
     srand((int)time(0));
 
@@ -40,12 +40,22 @@ int main()
             printf("Converting to positive.\n");
             num *= -1;
         }
-        if(num > mbInt)
+        /*if(num > mbInt)
         {
-            printf("Size is too large. Converting number to modulus %d\n",
+            printf("Size is too large. Converting number to max size %d\n",
                     mbInt);
-            num %= mbInt;
+            num = mbInt;
         }
+        //Made array much too large. Not very feasible for standard output.
+        //Although, it did work properly.
+        */
+        if(num > 256)
+        {
+            printf("Size is too large. Converting number to max size %d\n",
+                    256);
+            num = 256;
+        }
+        //Made array much too large. Not very feasible for standard output.
         if(num == 0)
         {
             printf("Number is currently zero. Adding one.\n");
@@ -93,7 +103,7 @@ int main()
 
         printf("Freeing allocated memory for array.\n");
         free(array);
-        printf("Continue? ('q' to quit, any other character to continue.\n");
+        printf("Continue? ('q' to quit, any other character to continue.)\n");
         scanf(" %c", &c);
     } while(c != 'q');
 
