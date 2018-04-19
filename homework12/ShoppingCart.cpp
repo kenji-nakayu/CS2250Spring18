@@ -23,39 +23,106 @@ string ShoppingCart::GetDate() const
 
 void ShoppingCart::AddItem(ItemToPurchase item)
 {
-    cout << "FIXME: implement Add Item function" << endl;
+    cartItems.push_back(item);
 
     return;
 }
 
 void ShoppingCart::RemoveItem(string name)
 {
-    cout << "FIXME: implement Remove Item function" << endl;
+    for(int i = 0; i < cartItems.size(); ++i)
+    {
+        if( name == this->cartItems.at(i).GetName())
+        {
+            cartItems.erase(cartItems.begin() + i);
+            return;
+        }
+    }
+
+    cout << "Item not found in cart. Nothing removed." << endl;
+
     return;
 }
 
 void ShoppingCart::ModifyItem(ItemToPurchase item)
 {
-    cout << "FIXME: implement Modify Item function" << endl;
+    for(int i = 0; i < cartItems.size(); ++i)
+    {
+        if(item.GetName() == this->cartItems.at(i).GetName())
+        {
+            if(item.GetDescription() != "none")
+            {
+            cartItems.at(i).SetDescription(item.GetDescription());
+            }
+            if(item.GetPrice() != 0)
+            {
+            cartItems.at(i).SetPrice(item.GetPrice());
+            }
+            if(item.GetQuantity() != 0)
+            {
+            cartItems.at(i).SetQuantity(item.GetQuantity());
+            cartItems.at(i).SetTotalCost();
+            }
+
+            return;
+        }
+
+    }
+
+    cout << "Item not found in cart. Nothing modified." << endl;
+
     return;
 }
 
 int ShoppingCart::GetNumItemsInCart()
-{    return this->cartItems.size(); }
-
-double ShoppingCart::GetCostOfCart()
 {
-    double temp = 0;
+    int num = 0; 
+    for(int i = 0; i < cartItems.size(); ++i)
+    {
+        num = num + cartItems.at(i).GetQuantity();
+    }
+    return num; }
+
+int ShoppingCart::GetCostOfCart()
+{
+    int temp = 0;
+
+    for(int i = 0; i < cartItems.size(); ++i)
+    {
+        cartItems.at(i).SetTotalCost();
+        temp = temp + cartItems.at(i).GetTotalCost();
+    }
 
     return temp;
 }
 
 void ShoppingCart::PrintTotal()
 {
+    cout << customerName << "'s Shopping Cart - " << currentDate << endl;
+    cout << "Number of Items: " << this->GetNumItemsInCart() << endl << endl;
+
+    if(cartItems.empty())
+    {
+        cout << "SHOPPING CART IS EMPTY" << endl;
+    }
+
+    for(int i = 0; i < cartItems.size(); ++i)
+    {
+        cartItems.at(i).PrintItemCost();
+    }
+
+    cout << endl << "Total: $" << this->GetCostOfCart() << endl;
     return;
 }
 
 void ShoppingCart::PrintDescriptions()
 {
+    cout << customerName << "'s Shopping Cart - " << currentDate << endl;
+    cout << endl << "Item Descriptions" << endl;
+
+    for(int i = 0; i < cartItems.size(); ++i)
+    {
+        cartItems.at(i).PrintItemDescription();
+    }
     return;
 }
